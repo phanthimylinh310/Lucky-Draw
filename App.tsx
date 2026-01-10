@@ -20,42 +20,39 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center shadow-lg">
+              <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center shadow-lg">
                 <i className="fas fa-id-badge text-white text-xl"></i>
               </div>
-              <h1 className="text-xl font-bold text-slate-900 hidden sm:block">HR Pro: Draw & Group</h1>
+              <h1 className="text-xl font-bold text-slate-900 hidden sm:block">Lucky Draw System</h1>
             </div>
-            
+
             <nav className="flex items-center gap-1 sm:gap-4">
               <button
                 onClick={() => setActiveTab(AppTab.LIST)}
-                className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
-                  activeTab === AppTab.LIST 
-                    ? 'bg-indigo-600 text-white shadow-md' 
+                className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${activeTab === AppTab.LIST
+                    ? 'bg-blue-500 text-white shadow-md'
                     : 'text-slate-500 hover:bg-slate-100'
-                }`}
+                  }`}
               >
                 <i className="fas fa-list-ul mr-2"></i>
                 名單
               </button>
               <button
                 onClick={() => setActiveTab(AppTab.LUCKY_DRAW)}
-                className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
-                  activeTab === AppTab.LUCKY_DRAW 
-                    ? 'bg-indigo-600 text-white shadow-md' 
+                className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${activeTab === AppTab.LUCKY_DRAW
+                    ? 'bg-blue-500 text-white shadow-md'
                     : 'text-slate-500 hover:bg-slate-100'
-                }`}
+                  }`}
               >
                 <i className="fas fa-trophy mr-2"></i>
                 抽籤
               </button>
               <button
                 onClick={() => setActiveTab(AppTab.GROUPING)}
-                className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
-                  activeTab === AppTab.GROUPING 
-                    ? 'bg-indigo-600 text-white shadow-md' 
+                className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${activeTab === AppTab.GROUPING
+                    ? 'bg-blue-500 text-white shadow-md'
                     : 'text-slate-500 hover:bg-slate-100'
-                }`}
+                  }`}
               >
                 <i className="fas fa-users-viewfinder mr-2"></i>
                 分組
@@ -76,7 +73,7 @@ const App: React.FC = () => {
             <p className="text-slate-500 mt-2 mb-6">請先到「名單」標籤頁添加參與者</p>
             <button
               onClick={() => setActiveTab(AppTab.LIST)}
-              className="px-6 py-2 bg-indigo-600 text-white rounded-lg font-bold hover:bg-indigo-700 transition-colors"
+              className="px-6 py-2 bg-blue-500 text-white rounded-lg font-bold hover:bg-blue-600 transition-colors"
             >
               去添加名單
             </button>
@@ -84,9 +81,9 @@ const App: React.FC = () => {
         ) : (
           <>
             {activeTab === AppTab.LIST && (
-              <ParticipantInput 
-                onParticipantsUpdate={handleParticipantsUpdate} 
-                initialList={participants} 
+              <ParticipantInput
+                onParticipantsUpdate={handleParticipantsUpdate}
+                initialList={participants}
               />
             )}
             {activeTab === AppTab.LUCKY_DRAW && (
